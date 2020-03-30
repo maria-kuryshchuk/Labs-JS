@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>Таблиця множення</title>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        var globalResult = 0;
+        var taskNum = 0;
+        var correctAnsw = 0;
+
+        function generateTask() {
+            taskNum += 1;
+            document.getElementById('output').innerHTML = "Завдання " + taskNum + " з 10";
+            var firstNum = Math.floor(Math.random() * 10) + 1;
+            var secondNum = Math.floor(Math.random() * 10) + 1;
+            globalResult = firstNum * secondNum;
+            document.getElementById('task').innerHTML = firstNum + "×" + secondNum;
+        }
+
+
+        function check() {
+            // console.log(result);
+            // if (document.getElementById('check').clicked == true) {
+            // console.log("button was clicked");
+            var res = parseInt(document.getElementById('input').value);
+            console.log(res);
+            if (res == globalResult) {
+                document.getElementById('result').innerHTML = "Правильно!";
+                correctAnsw += 1;
+
+            } else {
+                document.getElementById('result').innerHTML = "Помилка! Правильна відповідь " + globalResult;
+            }
+            marking(correctAnsw);
+            // }
+        }
+
+        function clear() {
+            var cl = document.getElementById('input');
+            cl.value = "";
+        }
+
+        function marking(correctAnsw) {
+
+            var percentage = correctAnsw * 10;
+            document.getElementById('output2').innerHTML = "Загальний рахунок " + percentage + "% " + "(" + correctAnsw + " з 10)";
+        }
+    </script>
+
+</head>
+
+<body>
+    <p id="output"></p>
+    <p id="output2"></p>
+    <input type="button" onClick="generateTask(); clear();" value="Наступне завдання">
+    <div id="task"></div><input id="input" type="text" value="">
+    <br><input type="button" id="check" onClick="check(); " value="Перевірити">
+    <div id="result"></div>
+
+
+
+</body>
+
+
+</html>

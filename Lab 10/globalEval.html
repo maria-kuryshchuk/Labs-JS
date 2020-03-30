@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery demo</title>
+    <style>
+        label {
+            display: block;
+            margin: .5em;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+</head>
+
+<body>
+    <p>
+        This method behaves differently from using a normal JavaScript eval() <br> in that it's executed within the global context (which is important for loading external scripts dynamically).
+    </p>
+    <script>
+        function test() {
+            jQuery.globalEval("var newVar = true;")
+        }
+        console.log(test()); // newVar===true
+    </script>
+</body>
+
+</html>

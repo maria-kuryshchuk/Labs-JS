@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.uniqueSort demo</title>
+    <style>
+        div {
+            color: blue;
+        }
+    </style>
+    <!-- Sorts an array of DOM elements, in place, with the duplicates removed. Note that this only works on arrays of DOM elements, not strings or numbers. -->
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+
+    <div>There are 6 divs in this document.</div>
+    <div></div>
+    <div class="dup"></div>
+    <div class="dup"></div>
+    <div class="dup"></div>
+    <div></div>
+
+    <script>
+        // unique() must take a native array
+        var divs = $("div").get();
+
+        // Add 3 elements of class dup too (they are divs)
+        divs = divs.concat($(".dup").get());
+        $("div:eq(1)").text("Pre-unique there are " + divs.length + " elements.");
+
+        divs = jQuery.uniqueSort(divs);
+        $("div:eq(2)").text("Post-unique there are " + divs.length + " elements.")
+            .css("color", "red");
+    </script>
+
+</body>
+
+</html>

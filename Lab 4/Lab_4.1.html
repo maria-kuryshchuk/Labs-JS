@@ -1,0 +1,43 @@
+<html>
+<title>Розраxунок прямокутника</title>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <table border="1" cellspacing="0px" cellpadding="3pt" style="">
+        <tr>
+            <td> Довжина </td>
+            <td><input type="text" id=a onchange="calculate()"></td>
+        </tr>
+        <tr>
+            <td> Ширина </td>
+            <td><input type="text" id=b onchange="calculate()"></td>
+        </tr>
+        <tr>
+            <td>Периметр</td>
+            <td id="perimeter"></td>
+        </tr>
+        <tr>
+            <td>Площа</td>
+            <td id="square"></td>
+        </tr>
+        <tr>
+            <td>Довжина діагоналі</td>
+            <td id="diagonal_length"></td>
+        </tr>
+    </table>
+
+    <script>
+        function calculate() {
+            var a = parseInt(document.getElementById('a').value);
+            var b = parseInt(document.getElementById('b').value);
+            perimeter.innerHTML = (a + b) * 2;
+            square.innerHTML = a * b;
+            diagonal_length.innerHTML = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+        }
+    </script>
+</body>
+
+</html>

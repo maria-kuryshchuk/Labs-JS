@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    clickNumber = 0;
+
+    function Task1() {
+        if (clickNumber == 0) {
+            document.getElementById('list').style.visibility = "hidden";
+            clickNumber = 1;
+        } else {
+            document.getElementById('list').style.visibility = "visible";
+            clickNumber = 0;
+        }
+    }
+
+    function Task2() {
+        if (clickNumber == 0) {
+            document.getElementById('list1').style.visibility = "hidden";
+            clickNumber = 1;
+        } else {
+            document.getElementById('list1').style.visibility = "visible";
+            clickNumber = 0;
+        }
+    }
+</script>
+
+<body>
+    <ul>
+        <li><a href="#" onclick="Task1()">Vegetables:</a>
+            <ul id=list>
+                <li>potato</li>
+                <li>beetroot</li>
+                <li>carrot</li>
+                <li>onion</li>
+            </ul>
+        </li>
+        <li><a href="#" onclick="Task2()">Fruit:</a>
+            <ul id=list1>
+                <li>apple</li>
+                <li>pineapple</li>
+                <li>appricot</li>
+                <li>lemon</li>
+                <li>pear</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

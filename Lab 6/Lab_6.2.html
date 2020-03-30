@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.element').hover(
+                function() {
+                    $(this).addClass('element')
+                },
+                function() {
+                    $(this).removeClass('element')
+                }
+            )
+        });
+    </script>
+
+    <style>
+        .element {
+            background: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="element">Hover the mouse pointer over this div.</div>
+
+</body>
+
+</html>

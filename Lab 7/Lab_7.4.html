@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("form").submit(function() {
+
+                if ($("#inp").val() == "correct") {
+                    alert('Успішно!');
+                } else {
+                    $("span").text("Неправильно!").show("1000");
+                }
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p> Введіть в текстове поле слово 'correct'</p>
+
+    <form>
+        <div>
+            <input type="text" id="inp" />
+            <input type="submit" />
+        </div>
+    </form>
+    <span></span>
+</body>
+
+</html>

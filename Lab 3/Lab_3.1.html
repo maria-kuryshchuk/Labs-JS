@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script Language="JavaScript">
+        var timeStr, dateStr;
+
+        function clock() {
+            now = new Date();
+            hours = now.getHours();
+            minutes = now.getMinutes();
+            seconds = now.getSeconds();
+            timeStr = "" + hours;
+            timeStr += ((minutes < 10) ? "-0" : "-") + minutes;
+            timeStr += ((seconds < 10) ? "-0" : "-") + seconds;
+            // document.clock.time.value = timeStr;
+            date = now.getDate();
+            month = now.getMonth() + 1;
+            year = now.getFullYear(); //+ 1900;
+            dateStr = ((date < 10) ? "0" : "-") + date;
+            dateStr += ((month < 10) ? "-0" : "") + month;
+            dateStr += "-" + year;
+            document.clock.time.value = dateStr + "  " + timeStr;
+            Timer = setTimeout("clock()", 1000);
+        }
+    </script>
+</head>
+
+<body onLoad="clock()">
+    <form name="clock">
+        Час і дата:
+        <input type="text" name="time" size="15" value="">
+    </form>
+</body>
+
+</html>

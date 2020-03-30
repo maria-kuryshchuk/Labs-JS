@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="jquery-3.4.1.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("div").bind("click", function() {
+                $("div").addClass('element');
+            });
+            $("div").bind("dblclick", function() {
+                $("div").removeClass('element');
+            });
+        });
+    </script>
+    <style>
+        .element {
+            background: rgb(185, 14, 177);
+            border-style: solid;
+            border-color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="user-select:none">Click on this div element to add style and double click to remove it</div>
+
+</body>
+
+</html>

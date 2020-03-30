@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        //The data() method attaches data to, or gets data from, selected elements.
+        $(document).ready(function() {
+            testObj = new Object();
+            testObj.greetingMorn = "Good Morning!";
+            testObj.greetingEve = "Good Evening!";
+            $("#btn1").click(function() {
+                $("div").data(testObj);
+            });
+            $("#btn2").click(function() {
+                alert($("div").data("greetingEve"));
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button id="btn1">Attach data to div element</button><br>
+    <button id="btn2">Get data attached to div element</button>
+
+    <div></div>
+
+</body>
+
+</html>

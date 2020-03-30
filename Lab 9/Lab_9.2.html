@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="jquery-3.4.1.js"></script>
+</head>
+
+<body>
+
+    <h1>JavaScript console Methods</h1>
+
+    <p>Press F12 on your keyboard to view messages in the console view.</p>
+    <p>You will see the output in the console window</p>
+
+    <script>
+        var myObj = {
+            firstname: "John",
+            lastname: "Doe"
+        };
+        console.info("Hello world! This is console.info()");
+        console.warn("This is a warning!");
+        console.error("You made a mistake");
+        console.dir(console); //виводить інтерактивний список властивостей об'єкта
+        console.dir(myObj);
+        console.dirxml(document.body); //метод об'єкту console виводить у консоль інтерактивний список вказаного XML/HTML елемента або як об'єкта JavaScript.
+        //приклад роботи console.time and console.timeEnd
+        //визначаємо, який цикл є швидшим
+        //The console.time() method starts a timer in the console view.
+        //This method allows you to time certain operations in your code for testing purposes.
+        //Use the console.timeEnd() method to end the timer and display the result in the console.view.
+        //Use the label parameter to name the timer, then you are able to have many timers on the same page.
+        var i;
+        console.time("test for loop");
+        for (i = 0; i < 1000000; i++) {
+            // some code
+        }
+        console.timeEnd("test for loop");
+
+        i = 0;
+        console.time("test while loop");
+        while (i < 1000000) {
+            i++
+        }
+        console.timeEnd("test while loop");
+        ////////////////////////////////////////////////////////
+        // приклад роботи console.profile and console.profileEnd
+        // profile() - метод об'єкту console який створює новий профіль Javascript CPU для збору даних у профільвальник браузера.
+        // Дані збираються щодо навантаження на процесор, память, тривалість виконання функції тощо.
+        // Зазвичай використовується для оптимінізації коду, коли необхідно визначити який код найдовше виконується і т.п.
+        // Для зупинки збору даних використовуємо console.profileEnd().
+        var x = 100,
+            s = '',
+            mas;
+        console.profile("Тест");
+        mas = document.getElementsByTagName('p');
+        for (i = 0; i < mas.length; i++) {
+            s = mas[i].innerHTML;
+            s = s.toUpperCase();
+            mas[i].innerHTML = s;
+            mas[i].title = 'tags p: ' + (i + 1);
+        }
+        console.profileEnd("Тест");
+
+        /////////////////////////////////////////////////////////
+        // console.assert() example
+        //Writes a message to the console, only if the first argument is false:
+        console.assert(document.getElementById("demo"), "You have no element with ID 'demo'");
+    </script>
+
+</body>
+
+</html>

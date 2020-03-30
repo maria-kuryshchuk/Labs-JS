@@ -1,0 +1,44 @@
+<!-- Check to see if an object is empty (contains no enumerable properties). -->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.isEmptyObject demo</title>
+    <style>
+        div {
+            color: blue;
+        }
+        
+        span {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(function() {
+            $('#btn5').one('click', function() {
+                var array1 = [obj0 = 'aaa', obj1 = [], obj2 = {}, obj3 = {
+                    a: 'b'
+                }, obj4 = new Object];
+                for (var i = 0; i <
+                    array1.length; i++) {
+                    if ($.isPlainObject(array1[i])) {
+                        if ($.isEmptyObject(array1[i])) {
+                            $('#div5').append('obj' + i + ': Plain JavaScript object with no properties <br />');
+                        } else {
+                            $('#div5').append('obj' + i +
+                                ': Plain JavaScript object with properties <br />');
+                        }
+                    } else {
+                        $('#div5').append('obj' + i + ': is not a Plain JavaScript object <br />');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btn5">PressMe</button>
+    <div id="div5"></div>
+</body>

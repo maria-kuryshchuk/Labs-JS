@@ -1,0 +1,38 @@
+<!-- Determines whether its argument represents a JavaScript number. -->
+
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery isNumeric demo</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function() {
+            //true(numeric)
+            console.log($.isNumeric("-10"));
+            console.log($.isNumeric("0"));
+
+            console.log($.isNumeric(0xFF));
+            console.log($.isNumeric("0xFF"));
+            console.log($.isNumeric("8e5"));
+            console.log($.isNumeric("3.1415"));
+            console.log($.isNumeric(+10));
+            console.log($.isNumeric(0144));
+
+            // false(non - numeric)
+            console.log($.isNumeric("-0x42"));
+            console.log($.isNumeric("7.2 acdgs "));
+            console.log($.isNumeric(""));
+            console.log($.isNumeric({}));
+            console.log($.isNumeric(NaN));
+            console.log($.isNumeric(null));
+            console.log($.isNumeric(true));
+            console.log($.isNumeric(Infinity));
+            console.log($.isNumeric(undefined));
+        });
+    </script>
+
+    <body>
+        <h1>Press F12 to see the output</h1>
+    </body>
+
+    </html>

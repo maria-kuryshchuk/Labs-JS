@@ -1,0 +1,22 @@
+<!-- Check to see if an object is empty (contains no enumerable properties). -->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery merge demo</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        // Merge the contents of two arrays together into the first array.
+        $(function() {
+
+            var first = ["a", "b", "c"];
+            var second = ["d", "e", "f"];
+            console.log($.merge($.merge([], first), second)); //Merges two arrays, but uses a copy, so the original isn't altered.
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Press F12 to see the output</h1>
+</body>

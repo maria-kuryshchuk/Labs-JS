@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        //The each() method specifies a function to run for each matched element.
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("li").each(function() {
+                    alert($(this).text())
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <button>Alert the value of each list item</button>
+
+    <ul>
+        <li>Coffee</li>
+        <li>Milk</li>
+        <li>Soda</li>
+    </ul>
+
+</body>
+
+</html>

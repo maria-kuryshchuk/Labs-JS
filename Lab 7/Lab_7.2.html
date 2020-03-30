@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("input.buttonA").bind("click", function() {
+                alert("You clicked 1 time");
+            });
+            $("input.buttonB").bind("dblclick", function() {
+                alert("You clicked the button two times!");
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Button 1" class="buttonA" />
+    <input type="button" value="Button 2" class="buttonB" />
+</body>
+
+</html>

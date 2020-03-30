@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.type demo</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+
+    Is it a RegExp? <b></b>
+    <br>
+    <h1>To see more examples press F12</h1>
+    <script>
+        $("b").append("" + jQuery.type(/test/));
+        console.log(jQuery.type(new Array()));
+        console.log(jQuery.type([]));
+        console.log(jQuery.type(Symbol()));
+        console.log(jQuery.type("test"));
+    </script>
+
+</body>
+
+</html>

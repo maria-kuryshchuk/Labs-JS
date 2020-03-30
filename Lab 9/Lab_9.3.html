@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("input.first").bind("click", function() {
+                // The first() method returns the first element of the selected elements.
+                $("div p").first().css("background-color", "yellow");
+            });
+            $("input.last").bind("click", function() {
+                // The last() method returns the last element of the selected elements.
+                $("div p").last().css("background-color", "red");
+            });
+            $("input.prev").bind("click", function() {
+                //prev()
+                // returns previous sibling elements (traverse backwards along sibling elements in the DOM tree, instead of forward).
+                $("span").prev().css("background-color", "green");
+            });
+            $("input.children").bind("click", function() {
+                //children()
+                //The children() method returns all direct children of the selected element.
+                $("h6").children().css("background-color", "lightgreen")
+            });
+            $("input.parent").bind("click", function() {
+                //Method parent() only traverse a single level up the DOM tree.
+                $("span").parent().css({
+                    "color": "red",
+                    "border": "2px solid red"
+                });
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <input type="button" value="first()" class="first" />
+    <input type="button" value="parent()" class="parent" />
+    <input type="button" value="children()" class="children" />
+    <input type="button" value="last()" class="last" />
+    <input type="button" value="prev()" class="prev" /><br>
+    <div style="border:1px solid black">
+        <p>This is a paragraph in a div.</p>
+        <p>This is a paragraph in a div.</p>
+        <p>This is a paragraph in a div.</p>
+    </div><br>
+
+    <div style="border:1px solid black">
+        <div class="ancestors">
+            <div style="width:300px;">div (great-grandparent)
+                <ul>ul (grandparent)
+                    <li>li (direct parent)
+                        <span>span</span>
+                        <span>span</span>
+                        <span>span</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div style="width:300px;">div (grandparent)
+                <h6>p (direct parent)
+                    <span>span</span>
+                    <span>span</span>
+                </h6>
+            </div>
+        </div>
+
+</body>
+
+</html>

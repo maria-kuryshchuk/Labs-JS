@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Images</title>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        var pics = ['image1.JPG', 'image2.JPG', 'image3.JPG'];
+
+        var amount = 0;
+
+        function forward() {
+            var rotator = document.getElementById('rotator');
+            amount++;
+
+            if (amount >= pics.length) {
+                amount = 0;
+            }
+            rotator.src = pics[amount];
+        }
+
+        function backwards() {
+            var rotator = document.getElementById('rotator');
+            amount--;
+            if (amount < 0) {
+                amount = pics.length - 1;
+            }
+            rotator.src = pics[amount];
+
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <input type="button" onClick="backwards();" value="Назад">
+    <img src="image1.JPG" alt="rotating image" width="600" height="500" id="rotator">
+    <input type="button" onClick="forward();" value="Вперед">
+</body>
+
+</html>
