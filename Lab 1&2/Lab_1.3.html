@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        function fun(a) {
+            main_form.t_res.value = a;
+        }
+    </script>
+</head>
+
+<body onLoad="fun('Відбулось завантаження сторінки');">
+    <form id="main_form">
+        <input type="text" size="100" value="Calculate" onFocus="fun('Текстовий елемент форми отримав фокус');" onSelect="fun('В текстовому полі форми виділений текст');"><br>
+        <input type="text" size="100" id="t_res"><br>
+        <a href="Lab_1.2.html">Посилання</a>
+    </form>
+</body>
+
+</html>
